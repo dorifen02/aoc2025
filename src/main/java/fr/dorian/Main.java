@@ -7,6 +7,7 @@ import fr.dorian.days.day1.Day1Part1;
 import fr.dorian.days.day1.Day1part2;
 import fr.dorian.days.day2.Day2Part1;
 import fr.dorian.days.day2.Day2Part2;
+import fr.dorian.days.day3.Day3;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -31,6 +32,11 @@ public class Main {
     System.out.println("AoC 2025 - Day 2 - part 2");
     long resultDay2part2 = new Day2Part2().solve(Day2InputFile);
     System.out.println("Result: " + resultDay2part2);
+
+    System.out.println("AoC 2025 - Day 3 - part 1");
+    Day3 day3 = new Day3();
+    int resultDay3part1 = day3.getSumOfMaxJoltagePerBank();
+    System.out.println("Result: " + resultDay3part1);
 }
 
 }
