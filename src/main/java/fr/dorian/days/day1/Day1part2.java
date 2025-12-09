@@ -16,14 +16,14 @@ public class Day1part2 {
 
             if (direction == 'L'){
                 if ((state.pointer - clics) <= 0) {     
-                    System.out.println("L " + "clics " + clics + " state.pointer " + state.pointer + " pointerToZeroCount + " + Math.abs(state.pointer - clics) / pointerMax);               
+                    //System.out.println("L " + "clics " + clics + " state.pointer " + state.pointer + " pointerToZeroCount + " + Math.abs(state.pointer - clics) / pointerMax);               
                     state.pointerToZeroCount += Math.abs(state.pointer - clics) / pointerMax;
                 }
             state.pointer = (state.pointer - clics) % pointerMax;
         
             } else if (direction == 'R'){
                 if ((state.pointer + clics) >= pointerMax) {    
-                    System.out.println("R " + "clics " + clics + " state.pointer " + state.pointer +  " pointerToZeroCount + " + (state.pointer + clics) / pointerMax);            
+                    //System.out.println("R " + "clics " + clics + " state.pointer " + state.pointer +  " pointerToZeroCount + " + (state.pointer + clics) / pointerMax);            
                     state.pointerToZeroCount += (state.pointer + clics) / pointerMax;
                 }
             state.pointer = (state.pointer + clics) % pointerMax;
