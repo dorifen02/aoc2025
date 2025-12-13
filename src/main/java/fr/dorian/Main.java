@@ -37,6 +37,9 @@ public class Main {
     Day3 day3 = new Day3();
     int resultDay3part1 = day3.getSumOfMaxJoltagePerBank();
     System.out.println("Result: " + resultDay3part1);
+    System.out.println("AoC 2025 - Day 3 - part 2");
+    long resultDay3part2 = day3.getSumOfMaxDynamicJoltagePerBank(12);
+    System.out.println("Result: " + resultDay3part2);
 }
 
 }

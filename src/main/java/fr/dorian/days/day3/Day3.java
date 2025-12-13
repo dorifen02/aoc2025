@@ -23,6 +23,13 @@ public class Day3 {
                 .sum();
     }
 
+    public long getSumOfMaxDynamicJoltagePerBank(int nbDigits) {
+        return Arrays.stream(readInputFile().split("\n"))
+                .mapToLong(bank -> maxDynamicJoltage(bank, nbDigits))
+                .sum();
+    }
+
+    //part 1
     private int maxJoltage(String bank) {
         int max = 0;
         int n = bank.length();
@@ -39,5 +46,20 @@ public class Day3 {
             }
         }
         return max;
+    }
+
+    // part2
+    private long maxDynamicJoltage(String bank, int nbDigits) {
+        long[] highestDigits = new long[nbDigits];
+
+        for (char c : bank.toCharArray()) {
+            long digit = c - '0';
+            for (int i = nbDigits -1; i >= 1; i--) {
+                long newDigit = highestDigits[i - 1] * 10 + digit;
+                highestDigits[i] = Math.max(highestDigits[i], newDigit);
+            }
+            highestDigits[0] = Math.max(highestDigits[0], digit);
+        }
+        return highestDigits[nbDigits - 1];
     }
 }
